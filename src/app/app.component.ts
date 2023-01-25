@@ -13,7 +13,8 @@ export class AppComponent {
     {title: 'Zahlen', url:'/zahlen', icon:'newspaper'},
     {title: 'Array', url:'/array', icon:'newspaper'},
     {title: 'Data Binding', url:'/data-binding', icon:'newspaper'},
-    {title: 'Rechner', url:'/rechner', icon:'newspaper'}
+    {title: 'Rechner', url:'/rechner', icon:'newspaper'},
+    {title: 'Alerts', url:'/alerts', icon:'newspaper'}
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
