@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-newsletter',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsletterPage implements OnInit {
 
+  //create FormGroup
+  contactForm: any = FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+    this.contactForm = new FormGroup({
+      email: new FormControl('',  Validators.email)
+    });
+  }
+
+  sendContactForm() {
+    console.log("Do something fancy with the form...");
+    console.log("Email: " + this.contactForm.get('email').value);
   }
 
 }

@@ -14,7 +14,8 @@ export class AppComponent {
     {title: 'Array', url:'/array', icon:'newspaper'},
     {title: 'Data Binding', url:'/data-binding', icon:'newspaper'},
     {title: 'Rechner', url:'/rechner', icon:'newspaper'},
-    {title: 'Alerts', url:'/alerts', icon:'newspaper'}
+    {title: 'Alerts', url:'/alerts', icon:'newspaper'},
+    {title: 'Newsletter', url:'/newsletter', icon:'mail'}
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+// Add ReactiveFormsModule to the imports
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +14,8 @@ import { NewsletterPage } from './newsletter.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    NewsletterPageRoutingModule
+    NewsletterPageRoutingModule,
+    ReactiveFormsModule // Add this line
   ],
   declarations: [NewsletterPage]
 })

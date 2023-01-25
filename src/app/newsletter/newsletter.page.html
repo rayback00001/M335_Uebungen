@@ -6,4 +6,26 @@
 
 <ion-content>
 
+  <div class="content">
+    <img src="assets/img/newsletter.jpg">
+    <h2>Jetzt für unseren neusten Newsletter anmelden</h2>
+  </div>
+
+  <form [formGroup]="contactForm"(ngSubmit)="sendContactForm()">
+    <ion-item>
+      <ion-label position="floating">Email <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <div class="formErrors">
+      <ion-item color="danger" *ngIf="!contactForm.controls.email.valid && !contactForm.controls.email.pending && (contactForm.controls.email.dirty)">
+        Die Email ist inkorrekt!
+      </ion-item>
+    </div>
+
+    <ion-button block color="primary" type="submit" [disabled]="contactForm.invalid">
+      Jetzt anmelden!
+    </ion-button>
+  </form>
+
 </ion-content>
