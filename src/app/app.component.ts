@@ -15,7 +15,10 @@ export class AppComponent {
     {title: 'Data Binding', url:'/data-binding', icon:'newspaper'},
     {title: 'Rechner', url:'/rechner', icon:'newspaper'},
     {title: 'Alerts', url:'/alerts', icon:'newspaper'},
-    {title: 'Newsletter', url:'/newsletter', icon:'mail'}
+    {title: 'Newsletter', url:'/newsletter', icon:'mail'},
+    {title: 'Login', url:'/login', icon:'arrow-forward-circle'},
+    {title: 'Register', url:'/register', icon:'arrow-forward-circle'}
+
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}

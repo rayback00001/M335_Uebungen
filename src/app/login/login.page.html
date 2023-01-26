@@ -6,4 +6,19 @@
 
 <ion-content>
 
+  <form [formGroup]="loginForm" (ngSubmit)="sendContactForm()">
+    <ion-item>
+      <ion-label position="floating">Email <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Passwort <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required formControlName="passwort" type="text"></ion-input>
+    </ion-item>
+    <button class="navigate-button" (click)="navigateToDetail()">NEW HERE? CREATE ACCOUNT</button>
+    <ion-button block color="primary" type="submit" [disabled]="loginForm.invalid">
+      LOGIN
+    </ion-button>
+  </form>
+
 </ion-content>
