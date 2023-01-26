@@ -23,5 +23,6 @@ export class RegisterPage implements OnInit {
     console.log("Do something fancy with the form...");
     console.log("Email: " + this.registerForm.get('email').value);
     console.log("Firstname: " + this.registerForm.get('passwort').value);
+    
   }
 }

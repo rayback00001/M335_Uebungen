@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+// Auth-Guards imports hinzufügen
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/compat/auth-guard';
+
+// Standardverhalten festlegen
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToRoot = () => redirectLoggedInTo(['']);
 
 const routes: Routes = [
   {
@@ -9,11 +15,15 @@ const routes: Routes = [
   },
   {
     path: 'navigation',
-    loadChildren: () => import('./navigation/navigation.module').then( m => m.NavigationPageModule)
+    loadChildren: () => import('./navigation/navigation.module').then( m => m.NavigationPageModule),
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin }
   },
   {
     path: 'navigation-detail',
-    loadChildren: () => import('./navigation-detail/navigation-detail.module').then( m => m.NavigationDetailPageModule)
+    loadChildren: () => import('./navigation-detail/navigation-detail.module').then( m => m.NavigationDetailPageModule),
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin }
   },
   {
     path: 'zahlen',
@@ -49,11 +59,19 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToRoot }
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule),
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToRoot }
+  },
+  {
+    path: 'storage',
+    loadChildren: () => import('./storage/storage.module').then( m => m.StoragePageModule)
   }
 ];
 
